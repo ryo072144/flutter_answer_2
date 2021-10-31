@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_exercise_2/page1.dart';
+import 'package:flutter_exercise_2/page2.dart';
 import 'package:flutter_exercise_2/widget.dart';
 
 void main() {
@@ -28,6 +29,8 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(centerTitle: true, title: Text('タイトル', style: titleStyle(),),),
       body: Container(
+
+        //問１ alignmentはWidgetの場所を指定する。
         alignment: Alignment.topCenter,
         child: Column(
           children: [
@@ -37,7 +40,20 @@ class MyHomePage extends StatelessWidget {
                 child: Text('page1',),
               style: ButtonStyle(
                 padding: MaterialStateProperty.all(EdgeInsets.all(20)),
-                shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)))
+
+                //問６ shapeプロパティはボタンの形を設定する。circular()の中の数字を大きくすると丸みが増す。
+                //shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)))
+              ),
+            ),
+            SizedBox(height: 20,),
+
+            //問３ Page1のボタンと同様。
+            ElevatedButton(
+              onPressed: ()=>Navigator.of(context).push(MaterialPageRoute(builder: (context){return Page2();})),
+              child: Text('page2',),
+              style: ButtonStyle(
+                  padding: MaterialStateProperty.all(EdgeInsets.all(20)),
+                  shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)))
               ),
             ),
           ],
