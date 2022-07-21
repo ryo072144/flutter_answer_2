@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_exercise_2/page1.dart';
 import 'package:flutter_exercise_2/page2.dart';
-import 'package:flutter_exercise_2/widget.dart';
+import 'package:flutter_exercise_2/constants.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,7 +27,7 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(centerTitle: true, title: Text('タイトル', style: titleStyle(),),),
+      appBar: AppBar(centerTitle: true, title: Text('タイトル', style: titleStyle,),),
       body: Container(
 
         //問１ alignmentはWidgetの場所を指定する。
